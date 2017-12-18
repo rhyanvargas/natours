@@ -11,7 +11,16 @@ Dark green: #28b485
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+div,
+section,
+nav,
+header,
+footer {
+    word-break: break-word;
 }
 
 /* GLOBALS */
@@ -21,18 +30,19 @@ body {
     font-size: 16px;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 10px;
 }
 
 h1,
 h2 {
     text-transform: uppercase;
+    display: inline;
 }
 
 h1 {
     font-size: 2.2rem;
     font-weight: 400;
-    letter-spacing: 1.2rem;
+    letter-spacing: 0.7rem;
 }
 h2 {
     font-size: 1.1rem;
@@ -43,7 +53,18 @@ h2 {
 .header {
     height: 95vh;
     padding: 20px;
-    /* position: relative; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-flow: column;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right bottom,
+            from(rgba(126, 213, 111, 0.801)),
+            to(rgba(40, 180, 133, 0.801))
+        ),
+        url(../img/hero.jpg);
     background-image: linear-gradient(
             to right bottom,
             rgba(126, 213, 111, 0.801),
@@ -52,19 +73,23 @@ h2 {
         url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
 .logo-box {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
+    /* justify-self: flex-start; */
 }
 .logo {
     height: 35px;
 }
 
 .heading-box {
+    display: flex;
+    flex: 1 1 0;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     color: #fff;
 }
 .heading-primary {
